@@ -12,7 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/librarys" />
             <option value="$PROJECT_DIR$/librarys/basic" />
-            <option value="$PROJECT_DIR$/librarys/component" />
+            <option value="$PROJECT_DIR$/librarys/common" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
