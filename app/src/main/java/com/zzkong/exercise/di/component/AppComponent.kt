@@ -9,6 +9,7 @@ import com.zzkong.exercise.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 /**
@@ -19,6 +20,7 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(
         AppModule::class,
         ApiModule::class,
+        AndroidSupportInjectionModule::class,
         AndroidInjectionModule::class,
         ActivityModule::class
 ))
