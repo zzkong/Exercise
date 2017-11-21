@@ -2,6 +2,7 @@ package com.zzkong.exercise
 
 import android.app.Activity
 import android.app.Application
+import com.zzkong.exercise.di.AppInjector
 import com.zzkong.exercise.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -19,7 +20,7 @@ class EApp : Application(), HasActivityInjector{
 
     override fun onCreate() {
         super.onCreate()
-        DaggerAppComponent.builder().application(this).build().inject(this)
+        AppInjector.init(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {
