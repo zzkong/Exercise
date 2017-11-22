@@ -3,11 +3,9 @@ package com.zzkong.exercise
 import android.app.Activity
 import android.app.Application
 import com.zzkong.exercise.di.AppInjector
-import com.zzkong.exercise.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 /**

@@ -50,5 +50,7 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:3.0.1'
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.8.0'
 
+    //smartRefresh
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-alpha-14'
 
 }

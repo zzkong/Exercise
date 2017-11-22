@@ -22,7 +22,7 @@ object AppInjector{
                 .build().inject(eapp)
         eapp
                 .registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
-                    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {
+                    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                         handleActivity(activity)
                     }
 
@@ -52,7 +52,7 @@ object AppInjector{
                 })
     }
 
-    fun handleActivity(activity: Activity){
+    fun handleActivity(activity: Activity?){
         if (activity is HasSupportFragmentInjector) {
             AndroidInjection.inject(activity)
         }
