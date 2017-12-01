@@ -20,6 +20,10 @@ class MeituFragment : BaseFragment(){
         return R.layout.fragment_meitu
     }
 
+    override fun bindViewModel() {
+    }
+
+
     override fun initData() {
         var contentList : ArrayList<String> = arrayListOf<String>()
         val contents = resources.getStringArray(R.array.images_category_list)

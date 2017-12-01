@@ -11,7 +11,7 @@ import javax.inject.Singleton
 /**
  * Created by zzkong on 2017/11/15.
  */
-@Module
+@Module(includes = arrayOf(ViewModelModule::class))
 class AppModule {
 
     @Provides

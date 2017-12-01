@@ -14,6 +14,7 @@ abstract class BaseFragment : Fragment() {
     val STATE_SAVE_IS_HIDDEN = "STATE_SAVE_IS_HIDDEN"
 
     abstract fun getLayoutRes() : Int
+    abstract fun bindViewModel()
     abstract fun initData()
     abstract fun lazyLoadData()
 
@@ -32,6 +33,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindViewModel()
         initData()
         lazyLoadData()
     }
