@@ -1,7 +1,6 @@
 package com.zzkong.exercise.repository
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.MediatorLiveData
 import android.util.Log
 import com.zzkong.exercise.api.MeituService
 import com.zzkong.ktpro.bean.ImageListBean
@@ -14,18 +13,12 @@ import javax.inject.Inject
  * Created by zzkong on 2017/11/30.
  */
 
-class MeituRepository{
+class MeituRepository @Inject constructor(val meituService: MeituService){
 
-    lateinit var meituService : MeituService
-
-    @Inject
-    fun MeituRepository(meituService: MeituService){
-            this.meituService = meituService
-    }
-
-    fun getImageList(title : String, page : Int) : LiveData<ImageListBean>{
-        val mImageList = MutableLiveData<ImageListBean>()
-        meituService.getImageList(title, "全部", page * 20, 20, 1).enqueue(object : Callback<ImageListBean> {
+    fun getImageList(title : String?, page : Int?) : MediatorLiveData<ImageListBean> {
+        val mImageList = MediatorLiveData<ImageListBean>()
+        Log.e("zzkong", "请求了: " + title)
+        meituService.getImageList(title!!, "全部", page!! * 20, 20, 1).enqueue(object : Callback<ImageListBean> {
             override fun onResponse(call: Call<ImageListBean>, response: Response<ImageListBean>) {
                 Log.e("zzkong", "成功了: " + response.body())
                 mImageList.setValue(response.body())

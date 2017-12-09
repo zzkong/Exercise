@@ -35,6 +35,11 @@ class MeituListFragment : BaseFragment(){
     }
 
     override fun initData() {
+//        meituVm.getImage().observe(this, Observer<ImageListBean>{ it ->
+//                Log.e("zzkong", it.toString())
+//        })
+
+        meituVm.setTitleAndPage("美女", 1)
     }
 
     override fun lazyLoadData() {

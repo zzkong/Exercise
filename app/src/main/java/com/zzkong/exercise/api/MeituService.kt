@@ -11,6 +11,6 @@ import retrofit2.http.Query
 interface MeituService{
 
     @GET("/data/imgs")
-    abstract fun getImageList(@Query("col") col: String, @Query("tag") tag: String, @Query("pn") pn: Int, @Query("rn") rn: Int, @Query("from") from: Int): Call<ImageListBean>
+    fun getImageList(@Query("col") col: String, @Query("tag") tag: String, @Query("pn") pn: Int, @Query("rn") rn: Int, @Query("from") from: Int): Call<ImageListBean>
 
 }
